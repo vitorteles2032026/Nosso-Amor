@@ -1,0 +1,218 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vida ❤️ | Vitor Hugo & Andressa</title><link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"><style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#090909;
+color:white;
+overflow-x:hidden;
+}
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.85)),
+url('imagens/foto1.jpg');
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero-content{
+max-width:900px;
+}
+
+.hero h1{
+font-family:'Great Vibes',cursive;
+font-size:5rem;
+color:#ff5d8f;
+}
+
+.hero h2{
+font-size:2rem;
+margin:10px 0;
+}
+
+.hero p{
+margin-top:20px;
+line-height:1.8;
+}
+
+.section{
+padding:80px 10%;
+}
+
+.title{
+font-family:'Great Vibes',cursive;
+font-size:3.5rem;
+text-align:center;
+color:#ff5d8f;
+margin-bottom:40px;
+}
+
+.message{
+max-width:900px;
+margin:auto;
+background:#151515;
+padding:40px;
+border-radius:25px;
+line-height:2;
+box-shadow:0 0 25px rgba(255,93,143,.15);
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:350px;
+object-fit:cover;
+border-radius:20px;
+transition:.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.04);
+}
+
+.counter{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.card{
+background:#151515;
+padding:25px;
+border-radius:20px;
+min-width:150px;
+text-align:center;
+box-shadow:0 0 20px rgba(255,93,143,.15);
+}
+
+.card h3{
+font-size:2rem;
+color:#ff5d8f;
+}
+
+footer{
+padding:80px 20px;
+text-align:center;
+}
+
+footer h2{
+font-family:'Great Vibes',cursive;
+font-size:4rem;
+color:#ff5d8f;
+}
+
+.heart{
+position:fixed;
+color:#ff5d8f;
+animation:float 8s linear infinite;
+pointer-events:none;
+}
+
+@keyframes float{
+from{
+transform:translateY(100vh);
+opacity:1;
+}
+to{
+transform:translateY(-100px);
+opacity:0;
+}
+}
+</style></head><body><section class="hero"><div class="hero-content"><h1>Vida ❤️</h1><h2>Vitor Hugo & Andressa</h2><p>
+Desde 04 de dezembro de 2022,
+cada momento ao seu lado se tornou uma das melhores partes da minha vida.
+</p></div></section><section class="section"><h2 class="title">Tempo Juntos ❤️</h2><div class="counter"><div class="card">
+<h3 id="anos">0</h3>
+<p>Anos</p>
+</div><div class="card">
+<h3 id="dias">0</h3>
+<p>Dias</p>
+</div></div></section><section class="section"><h2 class="title">Nossa História</h2><div class="message"><p>Meu amor, minha Vida...</p><p>
+Desde que você entrou na minha vida, tudo ficou mais bonito.
+Seu sorriso ilumina meus dias, seu abraço me traz paz e sua presença transforma momentos simples em lembranças inesquecíveis.
+</p><p>
+Obrigado por estar ao meu lado em cada passo dessa caminhada.
+Você é minha melhor escolha, meu porto seguro e o amor da minha vida.
+</p><p>
+Se eu pudesse escolher novamente, escolheria você mil vezes.
+Hoje, amanhã e para sempre.
+❤️
+</p></div></section><section class="section"><h2 class="title">Nossos Momentos 📸</h2><div class="gallery"><img src="imagens/foto1.jpg">
+<img src="imagens/foto2.jpg">
+<img src="imagens/foto3.jpg">
+<img src="imagens/foto4.jpg">
+<img src="imagens/foto5.jpg">
+<img src="imagens/foto6.jpg">
+<img src="imagens/foto7.jpg"></div></section><section class="section"><h2 class="title">Frases Que Me Lembram Você</h2><div class="message"><p>❤️ Meu lugar favorito sempre será ao seu lado.</p>
+<p>❤️ Você é a melhor parte dos meus dias.</p>
+<p>❤️ Cada momento com você vale a pena ser lembrado.</p>
+<p>❤️ O amor verdadeiro mora nos detalhes.</p>
+<p>❤️ Entre todas as histórias, a nossa é minha favorita.</p></div></section><footer><h2>Feliz Dia dos Namorados ❤️</h2><p>Those Eyes • New West</p><br><p>
+Com todo meu amor,<br>
+Vitor Hugo
+</p></footer><script>
+
+const inicio = new Date("2022-12-04");
+
+function atualizar(){
+
+const hoje = new Date();
+
+const diferenca = hoje - inicio;
+
+const dias = Math.floor(diferenca/(1000*60*60*24));
+
+const anos = Math.floor(dias/365);
+
+document.getElementById("anos").innerHTML = anos;
+document.getElementById("dias").innerHTML = dias;
+
+}
+
+atualizar();
+
+function criarCoracao(){
+
+const heart = document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML = "❤";
+
+heart.style.left = Math.random()*100 + "vw";
+
+heart.style.fontSize = (Math.random()*20+15)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},8000);
+
+}
+
+setInterval(criarCoracao,500);
+
+</script></body>
+</html>
